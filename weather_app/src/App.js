@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Switch, BrowserRouter} from "react-router-dom"
+import {createContext, useState, useEffect, useContext} from "react";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Favorite from "./view/Favorite";
+import Home from "./view/Home";
+import '../src/App.css';
+
+
+
+// export const UserContext = createContext();
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <UserContext> */}
+          <BrowserRouter>
+            <Navbar />
+            <Switch>
+              <Home />
+              <Route path="/" exact component={Home} />
+              <Route path="/Favorite" exact component={Favorite} />
+            </Switch>
+            <Footer />
+          </BrowserRouter>
+      {/* </UserContext> */}
     </div>
   );
 }
