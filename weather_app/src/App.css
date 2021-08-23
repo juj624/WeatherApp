@@ -46,14 +46,10 @@ a {
 }
 /* FAVORITE */
 
-
-
-
-
-
-
-
-
+/*DisplayWeather*/
+.weather-icon {
+  width: 50px;
+}
 
 /* FOOTER */
 
